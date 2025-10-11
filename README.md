@@ -19,10 +19,18 @@ step 4: For EDA and its Visualization , we show a bar graph showing the amount o
 <img width="500" height="281" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/ad15271a-8386-40dd-86d7-273499ef762d" />  
 <img width="500" height="281" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/1cc13813-649b-4a41-9bd0-f0c5d2f3bd7e" />
 
-step 5:For model training and evaluation, we are training the model with data around attrition using randomforestclassifier and this is done by splitting the given data into training and testing model (80% for training, 20% for testing) randomly. And this is shown in streamlit with model evaluation metrics that show accuracy, precision etc , a confusion matrix for the model and a bargraph to show how important each feature is from the data 
+step 5:For model training and evaluation, we are training the model with data around attrition using randomforestclassifier due to its binary nature and this is done by splitting the given data into training and testing model (80% for training, 20% for testing) randomly. And this is shown in streamlit with model evaluation metrics that show accuracy, precision etc , a confusion matrix for the model and a bargraph to show how important each feature is from the data 
 
 <img width="500" height="281" alt="Screenshot (16)" src="https://github.com/user-attachments/assets/7138e917-247b-436f-81e2-25bce9bac3a0" />
 <img width="500" height="281" alt="Screenshot (17)" src="https://github.com/user-attachments/assets/3324b6f6-af70-4859-8bab-565fff37d912" />
 <img width="500" height="281" alt="Screenshot (18)" src="https://github.com/user-attachments/assets/cef17560-2a82-475a-a87a-9ba2801b4e33" />
+
+step 6:For Attrition, its the same steps as above for model training, with randomforestclassifier around attrition , but for streamlit this section is to display the probability for attrition from the model we already got as shown below:
+
+<img width="500" height="281" alt="Screenshot (19)" src="https://github.com/user-attachments/assets/0d805758-b3b0-49a0-8623-81fdbdfa5f7c" />
+
+step 7:For Predict performance rating, for this the model training was done with randomforestregressor around performance rating, mainly because this is around multiple values and not binary like attrition and for streamlit this section is to display the predicted performance rating by the model as shown below:
+
+<img width="500" height="281" alt="Screenshot (20)" src="https://github.com/user-attachments/assets/cc4fd34f-eafd-4e9b-b67b-4ab1df75ff69" />
 
 
