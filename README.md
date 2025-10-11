@@ -14,12 +14,15 @@ step 3: Starting with data overview , this page is mainly to overview the data w
 <img width="500" height="281" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/931307e1-5569-49e7-899d-7810829e5311" />
 <img width="500" height="281" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/239076b0-c5fe-44e2-94d9-a631ed234b90" />
 
-step 4: For EDA and its Visualization , we show a bar graph showing the amount of people that stayed or left(attrition) , a graph for gender based attrition along with a heatmap showing correlation between all the factors given to us in the data.
+step 4: For EDA and its Visualization , we show a bar graph showing the amount of people that stayed or left(attrition) , a graph for gender based attrition along with a heatmap showing correlation between all the factors(feature) given to us in the data.
 
 <img width="500" height="281" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/ad15271a-8386-40dd-86d7-273499ef762d" />  
 <img width="500" height="281" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/1cc13813-649b-4a41-9bd0-f0c5d2f3bd7e" />
 
-step 5:For model training and evaluation, we are training the model with data around attrition using randomforestclassifier and this is done by splitting the given data into training and testing model (80% for training, 20% for testing) randomly. And this is shown in streamlit with model evaluation metrics that show accuracy, precision etc , a confusion matrix for the model and a bargraph to show how important each factor is from the data 
+step 5:For model training and evaluation, we are training the model with data around attrition using randomforestclassifier and this is done by splitting the given data into training and testing model (80% for training, 20% for testing) randomly. And this is shown in streamlit with model evaluation metrics that show accuracy, precision etc , a confusion matrix for the model and a bargraph to show how important each feature is from the data 
 
+<img width="500" height="281" alt="Screenshot (16)" src="https://github.com/user-attachments/assets/7138e917-247b-436f-81e2-25bce9bac3a0" />
+<img width="500" height="281" alt="Screenshot (17)" src="https://github.com/user-attachments/assets/3324b6f6-af70-4859-8bab-565fff37d912" />
+<img width="500" height="281" alt="Screenshot (18)" src="https://github.com/user-attachments/assets/cef17560-2a82-475a-a87a-9ba2801b4e33" />
 
 
