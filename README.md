@@ -4,7 +4,7 @@ Streamlit project to show employee attrition with EDA and model training
 
 (Note: entire project is done in 1 python file(employeeattrition.py)
 
-step 1: This involves processing of data(Employee-Attrition.csv) into a format thats more easier to model for predictions which are mainly binary encoding and one-hot encoding
+step 1: This involves processing of data(Employee-Attrition.csv) into a format thats more easier to model for predictions which are mainly binary encoding and one-hot encoding and drop columns with only 1 value(aka those that dont contribute to the prediction analysis)
 
 step 2: Next step is staring to code for streamlit alongside modelling but starting with the sidebar with "Dataset Overview", "EDA and its Visualization", "Model Training & Evaluation", "Predict Attrition", "Predict Performance Rating" options all of which denote each page 
 
@@ -16,6 +16,10 @@ step 3: Starting with data overview , this page is mainly to overview the data w
 
 step 4: For EDA and its Visualization , we show a bar graph showing the amount of people that stayed or left(attrition) , a graph for gender based attrition along with a heatmap showing correlation between all the factors given to us in the data.
 
-<img width="500" height="281" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/ad15271a-8386-40dd-86d7-273499ef762d" />  <img width="500" height="281" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/1cc13813-649b-4a41-9bd0-f0c5d2f3bd7e" />
+<img width="500" height="281" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/ad15271a-8386-40dd-86d7-273499ef762d" />  
+<img width="500" height="281" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/1cc13813-649b-4a41-9bd0-f0c5d2f3bd7e" />
 
-step 5:For model training and evaluation, we are initializing 
+step 5:For model training and evaluation, we are training the model with data around attrition using randomforestclassifier and this is done by splitting the given data into training and testing model (80% for training, 20% for testing) randomly. And this is shown in streamlit with model evaluation metrics that show accuracy, precision etc , a confusion matrix for the model and a bargraph to show how important each factor is from the data 
+
+
+
