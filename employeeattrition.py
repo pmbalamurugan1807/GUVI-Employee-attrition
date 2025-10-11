@@ -28,9 +28,9 @@ df = df.drop(['EmployeeCount', 'StandardHours', 'Over18', 'EmployeeNumber'], axi
 st.title("Employee Attrition Analysis and Prediction")
 st.markdown("To analyze employee data to visualize Attrition and predict performance.")
 
-# Sidebar Navigation 
+# Sidebar preparation
 
-st.sidebar.title("Navigation")
+st.sidebar.title("Navigate")
 page = st.sidebar.radio("Go to:", ["Dataset Overview", "EDA and its Visualization", "Model Training & Evaluation", "Predict Attrition", "Predict Performance Rating"])
 
 #Dataset Overview
@@ -160,3 +160,4 @@ elif page == "Predict Performance Rating":
         st.error("The employee has low performance.")
     else:
         st.success("The employee has good performance.")
+
