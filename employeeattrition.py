@@ -64,6 +64,11 @@ elif page == "EDA and its Visualization":
         ax.set_xticklabels(['Female', 'Male'])
         st.pyplot(fig)
 
+    counts = df['PerformanceRating'].value_counts().sort_index()
+    count_df = pd.DataFrame({'PerformanceRating': counts.index, 'Rating': counts.values})
+    st.subheader("Performance Rating Distribution")
+    st.dataframe(count_df, use_container_width=True)
+
     st.subheader("Correlation Heatmap")
     fig, ax = plt.subplots(figsize=(12, 8))
     sns.heatmap(df.corr(), cmap="seismic", center=0, ax=ax)
@@ -160,4 +165,5 @@ elif page == "Predict Performance Rating":
         st.error("The employee has low performance.")
     else:
         st.success("The employee has good performance.")
+
 
