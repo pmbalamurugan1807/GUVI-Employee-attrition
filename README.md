@@ -25,12 +25,17 @@ step 5:For model training and evaluation, we are training the model with data ar
 <img width="500" height="281" alt="Screenshot (17)" src="https://github.com/user-attachments/assets/3324b6f6-af70-4859-8bab-565fff37d912" />
 <img width="500" height="281" alt="Screenshot (18)" src="https://github.com/user-attachments/assets/cef17560-2a82-475a-a87a-9ba2801b4e33" />
 
-step 6:For Attrition, its the same steps as above for model training, with randomforestclassifier around attrition , but for streamlit this section is to display the probability for attrition from the model we already got as shown below:
+step 6:For Attrition, its the same steps as above for model training, with randomforestclassifier around attrition , but for streamlit this section is to display the probability for attrition from our input as shown below:
 
-<img width="500" height="281" alt="Screenshot (19)" src="https://github.com/user-attachments/assets/0d805758-b3b0-49a0-8623-81fdbdfa5f7c" />
+<img width="500" height="281" alt="Screenshot (24)" src="https://github.com/user-attachments/assets/d0ec0fc6-4a94-40a6-98d3-113ff4f6abe3" />
+<img width="500" height="281" alt="Screenshot (25)" src="https://github.com/user-attachments/assets/2d013ee8-0546-4c4a-b869-bbbaee84619f" />
 
-step 7:For Predict performance rating, for this the model training was done with randomforestregressor around performance rating, mainly because this is around multiple values and not binary like attrition and for streamlit this section is to display the predicted performance rating by the model as shown below:
 
-<img width="500" height="281" alt="Screenshot (20)" src="https://github.com/user-attachments/assets/cc4fd34f-eafd-4e9b-b67b-4ab1df75ff69" />
+step 7:For Predict performance rating, for this the model training was done with randomforestregressor around performance rating, mainly because this is around multiple values and not binary like attrition and for streamlit this section is to display the predicted performance rating from our input as shown below:
+
+<img width="500" height="281" alt="Screenshot (26)" src="https://github.com/user-attachments/assets/01289222-64b6-43bf-86d6-c3048e915e6b" />
+<img width="500" height="281" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/5da1bfc7-116e-42cc-b1ed-405d2ba77583" />
+
+
 
 
