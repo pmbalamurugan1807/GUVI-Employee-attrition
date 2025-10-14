@@ -14,10 +14,13 @@ step 3: Starting with data overview , this page is mainly to overview the data w
 <img width="500" height="281" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/931307e1-5569-49e7-899d-7810829e5311" />
 <img width="500" height="281" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/239076b0-c5fe-44e2-94d9-a631ed234b90" />
 
-step 4: For EDA and its Visualization , we show a bar graph showing the amount of people that stayed or left(attrition) , a graph for gender based attrition along with a heatmap showing correlation between all the factors(feature) given to us in the data.
+step 4: For EDA and its Visualization , we show a bar graph showing the amount of people that stayed or left(attrition) , a graph for gender based attrition along with a performance rating count and a heatmap showing correlation between all the factors(feature) given to us in the data.
 
-<img width="500" height="281" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/ad15271a-8386-40dd-86d7-273499ef762d" />  
-<img width="500" height="281" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/1cc13813-649b-4a41-9bd0-f0c5d2f3bd7e" />
+<img width="500" height="281" alt="Screenshot (28)" src="https://github.com/user-attachments/assets/267ed2e4-c231-4799-b47c-1667643f7004" />
+<img width="500" height="281" alt="Screenshot (29)" src="https://github.com/user-attachments/assets/4830d9d4-e55d-4205-a4db-0b9704e48017" />
+<img width="500" height="281" alt="Screenshot (30)" src="https://github.com/user-attachments/assets/2d7ae767-349e-491b-aba8-c92b638a183c" />
+
+
 
 step 5:For model training and evaluation, we are training the model with data around attrition using randomforestclassifier due to its binary nature and this is done by splitting the given data into training and testing model (80% for training, 20% for testing) randomly. And this is shown in streamlit with model evaluation metrics that show accuracy, precision etc , a confusion matrix for the model and a bargraph to show how important each feature is from the data 
 
