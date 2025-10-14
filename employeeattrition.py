@@ -120,11 +120,11 @@ elif page == "Model Training & Evaluation":
     sns.barplot(data=feat_imp, y='Feature', x='Importance', palette='viridis', ax=ax)
     st.pyplot(fig)
 
-#Attrition
-
+    #Attrition
 elif page == "Predict Attrition":
     st.header("Predict Employee Attrition Probability")
 
+    # Prepare model
     model = RandomForestClassifier(random_state=42)
     X = df.drop('Attrition', axis=1)
     y = df['Attrition']
@@ -132,44 +132,104 @@ elif page == "Predict Attrition":
     X_scaled = scaler.fit_transform(X)
     model.fit(X_scaled, y)
 
-    employee = st.selectbox("Select Employee (by index):", df.index)
-    input_data = df.loc[[employee]].drop('Attrition', axis=1)
-    input_scaled = scaler.transform(input_data)
-    prob = model.predict_proba(input_scaled)[0][1]
+    st.subheader("Enter Employee Details")
 
-    st.write(f"**Predicted Probability of Attrition:** {prob:.2%}")
+    # User input form
+    with st.form("attrition_form"):
+        age = st.number_input("Age", 18, 60, 30)
+        monthly_income = st.number_input("Monthly Income", 1000, 20000, 5000)
+        total_working_years = st.number_input("Total Working Years", 0, 40, 5)
+        years_at_company = st.number_input("Years at Company", 0, 40, 3)
+        gender = st.selectbox("Gender", ["Female", "Male"])
+        overtime = st.selectbox("OverTime", ["No", "Yes"])
+        job_level = st.number_input("Job Level", 1, 5, 2)
+        job_satisfaction = st.slider("Job Satisfaction", 1, 4, 3)
+        work_life_balance = st.slider("Work-Life Balance", 1, 4, 3)
+        distance_from_home = st.number_input("Distance From Home (in km)", 1, 50, 5)
+        submit = st.form_submit_button("Predict Attrition")
 
-    if prob > 0.5:
-        st.error("The employee is likely to leave, consider beginning proactive retention strategies.")
-    else:
-        st.success("The employee is likely to stay.")
+    if submit:
+        # Build feature vector (simple subset used for demo)
+        input_dict = {
+            'Age': age,
+            'MonthlyIncome': monthly_income,
+            'TotalWorkingYears': total_working_years,
+            'YearsAtCompany': years_at_company,
+            'Gender': 1 if gender == 'Male' else 0,
+            'OverTime': 1 if overtime == 'Yes' else 0,
+            'JobLevel': job_level,
+            'JobSatisfaction': job_satisfaction,
+            'WorkLifeBalance': work_life_balance,
+            'DistanceFromHome': distance_from_home
+        }
 
-#Predict Performance rating
+        # Align with model columns (fill missing cols with 0)
+        input_df = pd.DataFrame([input_dict])
+        for col in X.columns:
+            if col not in input_df.columns:
+                input_df[col] = 0
+        input_df = input_df[X.columns]
 
+        input_scaled = scaler.transform(input_df)
+        prob = model.predict_proba(input_scaled)[0][1]
+
+        st.write(f"**Predicted Probability of Attrition:** {prob:.2%}")
+        if prob > 0.5:
+            st.error("The employee is likely to leave. Consider retention measures.")
+        else:
+            st.success("The employee is likely to stay.")
+
+
+#Predict Performance Rating
 elif page == "Predict Performance Rating":
     st.header("Predict Employee Performance Rating")
 
+    # Prepare model
     X = df.drop('PerformanceRating', axis=1)
     y = df['PerformanceRating']
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
-
     model = RandomForestRegressor(random_state=42)
     model.fit(X_scaled, y)
 
-    employee = st.selectbox("Select Employee (by index):", df.index)
-    input_data = df.loc[[employee]].drop('PerformanceRating', axis=1)
-    input_scaled = scaler.transform(input_data)
+    st.subheader("Enter Employee Details")
 
-    predicted_rating = model.predict(input_scaled)[0]
+    with st.form("performance_form"):
+        age = st.number_input("Age", 18, 60, 30)
+        monthly_income = st.number_input("Monthly Income", 1000, 20000, 5000)
+        total_working_years = st.number_input("Total Working Years", 0, 40, 5)
+        years_at_company = st.number_input("Years at Company", 0, 40, 3)
+        job_level = st.number_input("Job Level", 1, 5, 2)
+        training_times_last_year = st.number_input("Training Times Last Year", 0, 10, 3)
+        overtime = st.selectbox("OverTime", ["No", "Yes"])
+        job_involvement = st.slider("Job Involvement", 1, 4, 3)
+        environment_satisfaction = st.slider("Environment Satisfaction", 1, 4, 3)
+        submit = st.form_submit_button("Predict Performance")
 
-    st.write(f"**Predicted Performance Rating:** {predicted_rating:.2f}")
+    if submit:
+        input_dict = {
+            'Age': age,
+            'MonthlyIncome': monthly_income,
+            'TotalWorkingYears': total_working_years,
+            'YearsAtCompany': years_at_company,
+            'JobLevel': job_level,
+            'TrainingTimesLastYear': training_times_last_year,
+            'OverTime': 1 if overtime == 'Yes' else 0,
+            'JobInvolvement': job_involvement,
+            'EnvironmentSatisfaction': environment_satisfaction
+        }
 
-    if predicted_rating < 3:
-        st.error("The employee has low performance.")
-    else:
-        st.success("The employee has good performance.")
+        input_df = pd.DataFrame([input_dict])
+        for col in X.columns:
+            if col not in input_df.columns:
+                input_df[col] = 0
+        input_df = input_df[X.columns]
 
+        input_scaled = scaler.transform(input_df)
+        predicted_rating = model.predict(input_scaled)[0]
 
-
-
+        st.write(f"**Predicted Performance Rating:** {predicted_rating:.2f}")
+        if predicted_rating < 3:
+            st.error("The employee shows low performance.")
+        else:
+            st.success("The employee shows good performance.")
