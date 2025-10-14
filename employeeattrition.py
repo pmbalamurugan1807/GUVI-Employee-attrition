@@ -108,7 +108,9 @@ elif page == "Model Training & Evaluation":
     cm = confusion_matrix(y_test, y_pred)
     st.subheader("Confusion Matrix")
     fig, ax = plt.subplots()
-    sns.heatmap(cm, annot=True, fmt='d', cmap='coolwarm', xticklabels=['Stayed', 'Left'], yticklabels=['Stayed', 'Left'], ax=ax)
+    sns.heatmap(cm, annot=True, fmt='d', cmap='coolwarm',xticklabels=['Predicted: Stayed', 'Predicted: Left'],yticklabels=['Actual: Stayed', 'Actual: Left'],ax=ax)
+    ax.set_xlabel("Predicted")
+    ax.set_ylabel("Actual")
     st.pyplot(fig)
 
     st.subheader("Feature Importance")
@@ -167,6 +169,7 @@ elif page == "Predict Performance Rating":
         st.error("The employee has low performance.")
     else:
         st.success("The employee has good performance.")
+
 
 
 
